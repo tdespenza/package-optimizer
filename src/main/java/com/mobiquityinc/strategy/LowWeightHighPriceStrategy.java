@@ -10,6 +10,9 @@ import java.util.Comparator;
  * This packaging algorithm packages items by sorting the items by highest price then by lowest weight.
  */
 public final class LowWeightHighPriceStrategy extends PackingStrategy {
+    public LowWeightHighPriceStrategy() {
+    }
+
     public LowWeightHighPriceStrategy(final Package box) {
         this.box = box;
     }

@@ -6,6 +6,7 @@ import com.mobiquityinc.interpreter.InterpreterExpression;
 import com.mobiquityinc.interpreter.ItemExpression;
 import com.mobiquityinc.interpreter.PackageWeightExpression;
 import com.mobiquityinc.strategy.LowWeightHighPriceStrategy;
+import com.mobiquityinc.strategy.PackingStrategy;
 import com.mobiquityinc.strategy.StrategyContext;
 
 import java.io.IOException;
@@ -39,6 +40,7 @@ public class Packer {
             final InterpreterExpression<Integer> packageWeightExpression = new PackageWeightExpression();
             final InterpreterExpression<List<Item>> itemExpression = new ItemExpression();
             final StrategyContext strategyContext = new StrategyContext();
+            final PackingStrategy strategy = new LowWeightHighPriceStrategy();
             final String[] lines = stream.toArray(String[]::new);
 
             int weight;
@@ -49,13 +51,8 @@ public class Packer {
                 itemExpression.setSentence(line);
                 weight = packageWeightExpression.interpret(interpreterContext);
                 items = itemExpression.interpret(interpreterContext);
-
-                strategyContext.setStrategy(
-                        new LowWeightHighPriceStrategy(
-                                new Package(weight, items)
-                        )
-                );
-
+                strategy.setPackage(new Package(weight, items));
+                strategyContext.setStrategy(strategy);
                 packages.add(strategyContext.execute());
             }
 

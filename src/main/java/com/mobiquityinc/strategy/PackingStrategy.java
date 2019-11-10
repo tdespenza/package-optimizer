@@ -10,4 +10,8 @@ public abstract class PackingStrategy {
     Package box;
 
     public abstract Package packageItems() throws APIException;
+
+    public void setPackage(final Package box) {
+        this.box = box;
+    }
 }

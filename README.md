@@ -63,4 +63,9 @@ or
 
 `./implementation.bat` (you'll be prompted for the file path if not specified on start)
 
+## Gradle Commands
+
+* Run Test => `gradle test`
+* Create New Archive => `gradle distZip`
+
 [https://gitlab.com/tdespenza/package-optimizer/pipelines]: https://gitlab.com/tdespenza/package-optimizer/pipelines
