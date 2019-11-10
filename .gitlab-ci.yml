@@ -33,9 +33,9 @@ test:
     paths:
       - build
       - .gradle
-      
+
 package:
-  stage: package
+  stage: .post
   script: gradle distZip
   cache:
     key: "$CI_COMMIT_REF_NAME"
