@@ -39,20 +39,24 @@ public class Packer {
             final InterpreterContext interpreterContext = new InterpreterContext();
             final InterpreterExpression<Integer> packageWeightExpression = new PackageWeightExpression();
             final InterpreterExpression<List<Item>> itemExpression = new ItemExpression();
-            final StrategyContext strategyContext = new StrategyContext();
             final PackingStrategy strategy = new LowWeightHighPriceStrategy();
+            final StrategyContext strategyContext = new StrategyContext(strategy);
             final String[] lines = stream.toArray(String[]::new);
 
             int weight;
             List<Item> items;
 
             for (String line : lines) {
+                // set sentences to be evaluated
                 packageWeightExpression.setSentence(line);
                 itemExpression.setSentence(line);
+
+                // interpret sentences by parsing the package weight and items
                 weight = packageWeightExpression.interpret(interpreterContext);
                 items = itemExpression.interpret(interpreterContext);
+
+                // create new package and optimize package using algorithm
                 strategy.setPackage(new Package(weight, items));
-                strategyContext.setStrategy(strategy);
                 packages.add(strategyContext.execute());
             }
 

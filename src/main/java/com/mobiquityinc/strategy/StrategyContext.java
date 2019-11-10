@@ -9,10 +9,7 @@ import com.mobiquityinc.packer.Package;
 public final class StrategyContext {
     private PackingStrategy strategy;
 
-    public StrategyContext() {
-    }
-
-    public void setStrategy(final PackingStrategy strategy) {
+    public StrategyContext(final PackingStrategy strategy) {
         this.strategy = strategy;
     }
 
