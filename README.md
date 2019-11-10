@@ -25,3 +25,9 @@ Couple of things I changed around was the move from maven to gradle. I've found 
 work. It also provides a more concise configuration that maven does. I also moved from junit to spock for testing.
 I really like spock's conciseness for data driven testing as well. Plus I've been with working in the groovy
 language for the past few years as well.
+
+To download a packaged version of the app without having to checkout the code, go to 
+[CI/CD][https://gitlab.com/tdespenza/package-optimizer/pipelines] tab. Then go the far right and click on the
+artifacts button.
+
+[https://gitlab.com/tdespenza/package-optimizer/pipelines]: https://gitlab.com/tdespenza/package-optimizer/pipelines

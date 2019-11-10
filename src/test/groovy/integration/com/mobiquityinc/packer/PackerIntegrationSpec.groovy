@@ -10,11 +10,10 @@ class PackerIntegrationSpec extends Specification {
     @Unroll
     def "program should run successfully"() {
         setup:
-        final ClassLoader classLoader = getClass().getClassLoader()
-        final File file = new File(classLoader.getResource("packages.txt").getFile())
+        final File file = new File(getClass().classLoader.getResource("packages.txt").file)
 
         when:
-        Packer.pack(file.getAbsolutePath())
+        Packer.pack(file.absolutePath)
 
         then:
         notThrown(APIException)
