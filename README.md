@@ -12,11 +12,11 @@ many strategies while maintaining low coupling and high cohesion.
 Before implementation to algorithm, I had to look for a pattern in the example output. That's when I saw that before 
 packaging the items, the items were sorted by descending price, then ascending weight. This made it easier to create 
 the strategy. In the strategy I knew I had to implement a comparator of some sort. I had a few choices to choose
-from. One was to implement the comparable interface on the `Item` class. The problem here is that I only compare one
-attribute when I need to compare two. Even if I could compare multiple attributes, with this approach if/when I 
-need to create another algorithm I would need to modify the `Item` class. Now we run into a violation of the Open/Closed
-Principle. Which means the only approach would be to implement a comparator for this specific algorithm by adding
-another class that implements the `Comparator` interface or using the `Comparator` static methods within a stream.
+from. One was to implement the comparable interface on the `Item` class. The problem here is that I only implement
+one comparator strategy. If I have to create another strategy, then I would need to modify the `Item` class. 
+Now we run into a violation of the Open/Closed Principle. Which means the only approach would be to implement a 
+comparator for this specific algorithm by adding another class that implements the `Comparator` interface or using 
+the `Comparator` static methods within a stream.
 
 I chose to implement within the stream because adding another class for such a small piece of logic. It's also less
 work for the compiler but still worth it.
