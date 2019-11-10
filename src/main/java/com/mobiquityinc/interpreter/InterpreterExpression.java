@@ -5,7 +5,7 @@ import com.mobiquityinc.exception.APIException;
 /**
  * The base class for implementing packaging expressions.
  *
- * @param <T>
+ * @param <T> - type to be returned from the interpreter
  */
 public abstract class InterpreterExpression<T> {
     String sentence;

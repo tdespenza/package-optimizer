@@ -31,7 +31,6 @@ publishing {
 dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:28.0-jre'
-    compile group: 'com.github.lalyos', name: 'jfiglet', version: '0.0.8'
 
     // Use the latest Groovy version for Spock testing
     testImplementation 'org.codehaus.groovy:groovy-all:2.5.8'
