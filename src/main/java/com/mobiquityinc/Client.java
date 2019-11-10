@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Client {
     public static void main(final String[] args) throws APIException {
         System.out.println("Welcome To Package Optimizer!\n");
-        System.out.println("Please note that any items with a price or weight over 100 will be discarded from packaging.");
+        System.out.println("Please note that any items with a price or weight over 100 will be discarded from packaging.\n");
 
         String filePath = null;
         if (args.length == 0) {
