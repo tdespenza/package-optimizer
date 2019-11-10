@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * The interpreter context is for parsing the sentence grammar of a given UTF-8 file to get the package weight and list
+ * of items to be shipped.
+ */
 public final class InterpreterContext {
 
     public final int getPackageWeight(final String sentence) throws APIException {

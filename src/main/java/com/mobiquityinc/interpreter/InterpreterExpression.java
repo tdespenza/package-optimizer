@@ -2,6 +2,11 @@ package com.mobiquityinc.interpreter;
 
 import com.mobiquityinc.exception.APIException;
 
+/**
+ * The base class for implementing packaging expressions.
+ *
+ * @param <T>
+ */
 public abstract class InterpreterExpression<T> {
     String sentence;
 

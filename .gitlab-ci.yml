@@ -37,6 +37,9 @@ test:
 package:
   stage: .post
   script: gradle distZip
+  artifacts:
+    paths:
+      - build/distributions/*.zip
   cache:
     key: "$CI_COMMIT_REF_NAME"
     policy: pull

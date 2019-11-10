@@ -21,6 +21,13 @@ public class Packer {
     private Packer() {
     }
 
+    /**
+     * The glue file for running a packaging algorithm
+     *
+     * @param filePath - absolute file path
+     * @return - output from the packaging algorithm
+     * @throws APIException - thrown when the given filePath contains invalid data
+     */
     public static String pack(final String filePath) throws APIException {
         if (filePath == null || "".equals(filePath.trim())) {
             throw new APIException("ERROR: Invalid absolute file path type! File Path [ " + filePath + " ]");

@@ -3,6 +3,9 @@ package com.mobiquityinc.strategy;
 import com.mobiquityinc.exception.APIException;
 import com.mobiquityinc.packer.Package;
 
+/**
+ * The main interface for implementing new packing algorithms.
+ */
 public abstract class PackingStrategy {
     Package box;
 
