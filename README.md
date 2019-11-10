@@ -60,6 +60,7 @@ or
 `./implementation.bat C:/absolute/path/to/utf/8/file.txt`
 
 or 
+
 `./implementation.bat` (you'll be prompted for the file path if not specified on start)
 
 [https://gitlab.com/tdespenza/package-optimizer/pipelines]: https://gitlab.com/tdespenza/package-optimizer/pipelines
